@@ -1,6 +1,8 @@
 <template>
   <div id="app">
     <!-- <DataBinding></DataBinding> -->
+    <!-- <FormBinding1></FormBinding3> -->
+    <!-- <FormBinding2></FormBinding3> -->
     <FormBinding3></FormBinding3>
   </div>
 </template>
