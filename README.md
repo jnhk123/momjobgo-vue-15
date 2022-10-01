@@ -5,3 +5,4 @@
 이후에 npm run serve 로 시작하시면 됩니다.
 
 branch 별로 내용이 다르니 branch 명을 보고 확인부탁드립니다.
+master branch는 basic용 branch 입니다.
