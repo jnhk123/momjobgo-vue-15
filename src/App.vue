@@ -1,25 +1,15 @@
 <template>
   <div id="app">
-    <!-- <LifeCycle></LifeCycle> -->
-    <!-- <DataBinding></DataBinding> -->
-    <FormBinding3></FormBinding3>
+    <LifeCycle></LifeCycle>
   </div>
 </template>
 
 <script>
-// import LifeCycle from "./views/LifeCycle.vue";
-// import DataBinding from "./views/DataBinding.vue";
-// import FormBinding from "@/views/FormBinding.vue";
-// import FormBinding2 from "@/views/FormBinding2.vue";
-import FormBinding3 from "@/views/FormBinding3.vue";
+import LifeCycle from "./views/LifeCycle.vue";
 
 export default {
   components: {
-    // LifeCycle,
-    // DataBinding,
-    // FormBinding,
-    // FormBinding2,
-    FormBinding3,
+    LifeCycle,
   },
 };
 </script>
