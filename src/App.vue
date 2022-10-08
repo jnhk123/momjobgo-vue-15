@@ -1,20 +1,20 @@
 <template>
-  <div id="app"></div>
+  <div id="app">
+    <IfRenderingView></IfRenderingView>
+    <ShowRenderingView></ShowRenderingView>
+  </div>
 </template>
 
 <script>
+import IfRenderingView from "@/views/IfRenderingView.vue";
+import ShowRenderingView from "./views/ShowRenderingView.vue";
+
 export default {
-  components: {},
+  components: {
+    IfRenderingView,
+    ShowRenderingView,
+  },
 };
 </script>
 
-<style scoped>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style scoped></style>
