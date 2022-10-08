@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>multi select</h3>
+    <h3 v-bind:id="apple">multi select</h3>
     <select v-model="multiSelect" multiple>
       <option v-bind:value="apple">사과</option>
       <option v-bind:value="orange">오렌지</option>
@@ -19,7 +19,7 @@ export default {
     return {
       multiSelect: [],
 
-      apple: "사과",
+      apple: "123",
       orange: "오렌지",
       grape: "포도",
       peach: "복숭아",
