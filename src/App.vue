@@ -1,10 +1,23 @@
 <template>
-  <div id="app"></div>
+  <div id="app">
+    <ChildView :message="1"></ChildView>
+    <input type="text" v-model="message" />
+  </div>
 </template>
 
 <script>
+import ChildView from "./views/ChildView.vue";
+
 export default {
-  components: {},
+  components: {
+    ChildView,
+  },
+
+  data() {
+    return {
+      message: "Hello World!",
+    };
+  },
 };
 </script>
 
