@@ -1,22 +1,51 @@
 <template>
   <div id="app">
-    <ChildView :message="1"></ChildView>
-    <input type="text" v-model="message" />
+    <ListComponent
+      ref="listComponent"
+      :list="fruits"
+      :selected="selected"
+      @change="changeSelected"
+      label="name"
+      id="key"
+    ></ListComponent>
   </div>
 </template>
 
 <script>
-import ChildView from "./views/ChildView.vue";
+import ListComponent from "./components/ListComponent.vue";
 
 export default {
   components: {
-    ChildView,
+    ListComponent,
   },
 
   data() {
     return {
-      message: "Hello World!",
+      fruits: [
+        { name: "사과", key: "apple" },
+        { name: "복숭아", key: "peach" },
+        { name: "오렌지", key: "orange" },
+        { name: "딸기", key: "strawberry" },
+      ],
+
+      cars: [
+        { carName: "아반떼", carId: "1" },
+        { carName: "소나타", carId: "2" },
+        { carName: "그렌져", carId: "3" },
+      ],
+
+      selected: "",
     };
+  },
+
+  methods: {
+    changeSelected(value) {
+      this.selected = value;
+    },
+  },
+
+  mounted() {
+    console.log(this.$refs.listComponent);
   },
 };
 </script>
