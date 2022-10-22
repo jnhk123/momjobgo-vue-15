@@ -8,8 +8,6 @@
 
 <script>
 export default {
-  name: "App",
-
   data() {
     return {
       message: "Hello World!!",
@@ -52,12 +50,20 @@ export default {
     console.log("updated", this.$refs.rDiv.innerText);
   },
 
-  beforeUnmount() {
-    console.log("beforeUnmount", this.$refs.rDiv.innerText);
+  // beforeUnmount() {
+  //   console.log("beforeUnmount", this.$refs.rDiv.innerText);
+  // },
+
+  // unmounted() {
+  //   console.log("unmounted", this.$refs.rDiv, this.inputText);
+  // },
+
+  beforeDestroy() {
+    console.log("beforeDestroy", this.$refs.rDiv.innerText);
   },
 
-  unmounted() {
-    console.log("unmounted", this.$refs.rDiv, this.inputText);
+  destroyed() {
+    console.log("destroyed", this.$refs.rDiv, this.inputText);
   },
 };
 </script>
