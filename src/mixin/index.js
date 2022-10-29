@@ -16,4 +16,8 @@ export default {
       return `${year}-${month}-${_date} ${hours}:${minutes}:${seconds}`;
     },
   },
+
+  mounted() {
+    console.log("mounted");
+  },
 };
