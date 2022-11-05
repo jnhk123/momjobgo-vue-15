@@ -8,7 +8,8 @@
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
+import { callApi } from "@/plugins/axios";
 
 export default {
   data() {
@@ -20,8 +21,8 @@ export default {
 
   methods: {
     async login() {
-      const response = await axios({
-        url: "https://api.devcury.kr/auth/user",
+      const response = await callApi({
+        url: "/auth/user",
         method: "post",
         data: {
           id: this.id,
@@ -31,6 +32,12 @@ export default {
 
       console.log(response);
 
+      const response2 = await callApi({
+        url: "/api/auth/user",
+        method: "GET",
+      });
+
+      console.log(response2);
       //   const token = response.data.token;
     },
   },
