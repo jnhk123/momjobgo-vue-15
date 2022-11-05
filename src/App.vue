@@ -1,20 +1,22 @@
 <template>
-  <div id="app"></div>
+  <LayoutView v-if="isLogin"></LayoutView>
+  <LoginView v-else></LoginView>
 </template>
 
 <script>
+import LayoutView from "@/views/layoutView/LayoutView.vue";
+import LoginView from "@/views/LoginView.vue";
+
 export default {
-  components: {},
+  data() {
+    return {
+      isLogin: false,
+    };
+  },
+
+  components: {
+    LayoutView,
+    LoginView,
+  },
 };
 </script>
-
-<style scoped>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
