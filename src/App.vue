@@ -1,10 +1,19 @@
 <template>
-  <div id="app"></div>
+  <div id="app">
+    <ControllerView></ControllerView>
+    <MonitorView></MonitorView>
+  </div>
 </template>
 
 <script>
+import ControllerView from "@/components/ControllerView.vue";
+import MonitorView from "@/components/MonitorView.vue";
+
 export default {
-  components: {},
+  components: {
+    ControllerView,
+    MonitorView,
+  },
 };
 </script>
 
