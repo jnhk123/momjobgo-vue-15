@@ -4,6 +4,7 @@ import HomeView from "../views/HomeView.vue";
 import LoginView from "../views/LoginView.vue";
 import BoardView from "../views/BoardView.vue";
 import BoardFormView from "../views/BoardFormView.vue";
+import BoardDetailView from "../views/BoardDetailView.vue";
 
 Vue.use(VueRouter);
 
@@ -33,7 +34,17 @@ const routes = [
     component: BoardView,
   },
   {
+    path: "/board/:id",
+    name: "boardDetail",
+    component: BoardDetailView,
+  },
+  {
     path: "/board/form",
+    name: "boardForm",
+    component: BoardFormView,
+  },
+  {
+    path: "/board/form/:id",
     name: "boardForm",
     component: BoardFormView,
   },

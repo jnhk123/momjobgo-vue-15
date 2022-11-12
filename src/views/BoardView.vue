@@ -5,6 +5,11 @@
     </v-row>
     <!-- <v-row> -->
     <v-data-table :headers="headers" :items="boards">
+      <template #[`item.title`]="{ item }">
+        <span @click="$router.push(`/board/${item.bno}`)">
+          {{ item.title }}
+        </span>
+      </template>
       <template #[`item.createdAt`]="{ item }">
         {{ toWriteTime(new Date(item.createdAt)) }}
       </template>
@@ -39,9 +44,13 @@ export default {
   },
   methods: {
     async callBoards() {
-      const response = await getBoards();
-      console.log("response", response);
-      this.boards = response.data;
+      try {
+        const response = await getBoards();
+        this.boards = response.data;
+      } catch (error) {
+        console.error(error);
+        alert("네트워크 에러");
+      }
     },
   },
 

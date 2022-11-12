@@ -28,7 +28,7 @@
 
     <v-app-bar app>
       <!-- -->
-      v-app-bar
+      <v-btn @click="logout">로그아웃</v-btn>
     </v-app-bar>
 
     <!-- Sizes your content based upon application components -->
@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   data: () => ({
@@ -62,6 +62,16 @@ export default {
 
   computed: {
     ...mapGetters("user", ["name"]),
+  },
+
+  methods: {
+    ...mapActions("user", ["initUser"]),
+
+    logout() {
+      if (confirm("로그아웃 하시겠습니까?")) {
+        this.initUser();
+      }
+    },
   },
 };
 </script>
