@@ -2,6 +2,8 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import LoginView from "../views/LoginView.vue";
+import BoardView from "../views/BoardView.vue";
+import BoardFormView from "../views/BoardFormView.vue";
 
 Vue.use(VueRouter);
 
@@ -24,6 +26,16 @@ const routes = [
     path: "/login",
     name: "login",
     component: LoginView,
+  },
+  {
+    path: "/board",
+    name: "board",
+    component: BoardView,
+  },
+  {
+    path: "/board/form",
+    name: "boardForm",
+    component: BoardFormView,
   },
 ];
 

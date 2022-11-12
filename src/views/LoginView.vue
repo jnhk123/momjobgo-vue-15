@@ -8,8 +8,8 @@
 </template>
 
 <script>
-// import axios from "axios";
 import { callApi } from "@/plugins/axios";
+import { mapActions } from "vuex";
 
 export default {
   data() {
@@ -20,6 +20,8 @@ export default {
   },
 
   methods: {
+    ...mapActions("user", ["setToken", "setName", "setId"]),
+
     async login() {
       const response = await callApi({
         url: "/auth/user",
@@ -30,15 +32,15 @@ export default {
         },
       });
 
-      console.log(response);
+      this.setToken(response.data.token);
 
-      const response2 = await callApi({
+      const userInfo = await callApi({
         url: "/api/auth/user",
         method: "GET",
       });
 
-      console.log(response2);
-      //   const token = response.data.token;
+      this.setId(userInfo.data.id);
+      this.setName(userInfo.data.name);
     },
   },
 };
