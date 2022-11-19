@@ -36,3 +36,25 @@ export const updateBoard = (data) => {
     data,
   });
 };
+
+export const postComment = (data, bno) => {
+  return callApi({
+    url: `/api/board/comment/${bno}`,
+    method: "POST",
+    data,
+  });
+};
+
+export const getComments = (bno) => {
+  return callApi({
+    url: `/api/board/comment/${bno}`,
+    method: "GET",
+  });
+};
+
+export const deleteComment = (id) => {
+  return callApi({
+    url: `/api/board/comment/${id}`,
+    method: "DELETE",
+  });
+};
